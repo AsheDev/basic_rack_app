@@ -12,4 +12,4 @@ ADD . $APP_HOME/
 ENV BUNDLER_WITHOUT development test
 RUN bundle install
 
-CMD ["rackup", "--host", "0.0.0.0", "-p", "5000"]
+CMD ["rerun", "--", "rackup", "--host", "0.0.0.0", "-p", "5000"]

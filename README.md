@@ -15,6 +15,27 @@ Once the image is built the container can be started with the command
 
 Finally, you can make a request against it like so `curl localhost:5000`.
 
+### Alternative Docker Run Command
+This alternative takes advantage of the [rerun](https://github.com/alexch/rerun)
+gem. This gem watches for file changes and allows for development while the
+Docker container is running.
+
+To take advantage of rerun you can start the container with this command:  
+`docker run -d -p 5000:5000 -v "$(pwd):/app" basic_rack_app`
+
+The above command can be broken down like so:  
+* `docker run` starts the container
+* `-d` stands for detached so control returns to the terminal
+* `-p 5000:5000` binds your local port 5000 to the container's port 5000
+* `-v "$(pwd):/app"` mounts your `pwd` (present working directory) into the
+  container via its `/app` directory. `/app` is specified in the Dockerfile
+* `basic_rack_app` is the name of the image
+
+Much like the previous directions, you can make a request against the running
+container like so `curl localhost:5000`. Making a change to the `config.ru`
+file, for example, and then saving it, will be reflected once you make another
+`curl` request.
+
 ## Rack
 Alternatively to Docker, this can be run via Rack with `rackup configu.ru`. Once
 this is successful it will output what it's listening on. For example:

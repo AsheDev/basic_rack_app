@@ -4,3 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'rack'
+
+group :development, :test do
+  gem 'rerun'
+end
