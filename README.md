@@ -9,6 +9,10 @@ This app can be run with either Docker or the `rackup` command.
 Before the container can be started the image will first need to be built. To
 build the image run `docker build -t basic_rack_app .`.
 
+Note that the Docker approach is using a `startup.sh` script to start the rack
+server. You may need to change permissions on this file, `chmod u+x startup.sh`
+should do the trick.
+
 Once the image is built the container can be started with the command
 `docker run -p 5000:5000 basic_rack_app .`. The "-p" command maps the host port
 5000 to the docker port 5000.
