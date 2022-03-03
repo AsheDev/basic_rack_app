@@ -13,5 +13,7 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 ADD . $APP_HOME/
+# Explicitly copy the hidden .env file
+COPY .env $APP_HOME/
 
 CMD ["/app/startup.sh"]

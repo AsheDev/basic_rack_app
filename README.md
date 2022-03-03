@@ -2,8 +2,18 @@
 The purpose of this app is to serve as either a simple app which responds to a
 request or as a base to build off of.
 
-# Running The App
+## Running The App
 This app can be run with either Docker or the `rackup` command.
+
+*Before* getting started it will be important to create a `.env` file. This will
+maintain local environment variables for the application. For this small example
+app it's simply a specified port - primarily included for hosting platforms.
+
+To create a `.env` file simply run this command and you're all set:  
+`cp env.example .env`
+
+Note that once this file is added to your local directory it'll be important to
+exclude it from any commits you may perform in the future.
 
 ## Docker
 Before the container can be started the image will first need to be built. To
