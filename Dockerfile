@@ -14,4 +14,4 @@ WORKDIR $APP_HOME
 
 ADD . $APP_HOME/
 
-CMD ["rerun", "--", "rackup", "--host", "0.0.0.0", "-p", "5000"]
+CMD ["/app/startup.sh"]
